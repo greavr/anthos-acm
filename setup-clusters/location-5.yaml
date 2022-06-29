@@ -7,7 +7,7 @@ apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
   name: chaos-us-east1-1  # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
   labels:
-    location-name: "location-7"  # Should be unique in this situation (could be location number), used in selector
+    location-name: "location-5"  # Should be unique in this situation (could be location number), used in selector
     canary: "50"
     location: "SC"
     market: "new yorkers"
@@ -16,8 +16,8 @@ metadata:
 kind: ClusterSelector
 apiVersion: configmanagement.gke.io/v1
 metadata:
-  name: loc-7-sel
+  name: loc-5-sel
 spec:
   selector:
     matchLabels:
-      location-name: location-7 # label and value match Cluster label above
+      location-name: location-5 # label and value match Cluster label above
