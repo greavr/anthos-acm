@@ -1,0 +1,29 @@
+apiVersion: configsync.gke.io/v1alpha1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  annotations:
+    configmanagement.gke.io/cluster-selector: "loc-2-sel"
+spec:
+  git:
+   repo: "https://github.com/greavr/anthos-acm.git"
+   branch: "main"
+   dir: "/location2"
+   auth: "none"
+
+---
+
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: syncs-repo-crb
+  annotations:
+    configmanagement.gke.io/cluster-selector: loc-2-sel
+subjects:
+- kind: ServiceAccount
+  name: "ns-reconciler-location-2"
+  namespace: config-management-system
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin # configsync.gke.io:ns-reconciler
+  apiGroup: rbac.authorization.k8s.io
