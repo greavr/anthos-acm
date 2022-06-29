@@ -10,7 +10,7 @@ metadata:
     location-name: "location-3"  # Should be unique in this situation (could be location number), used in selector
     canary: "50"
     location: "SC"
-    market: "new yorkers"
+    market: "hipsters"
     equipment: "aks"
 ---
 kind: ClusterSelector
