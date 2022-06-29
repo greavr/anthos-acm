@@ -5,13 +5,13 @@
 kind: Cluster
 apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
-  name: chaos-aws-us-west1  # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
+  name: chaos-us-central1-1 # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
   labels:
     location-name: "location-4"  # Should be unique in this situation (could be location number), used in selector
     canary: "50"
-    location: "CA"
-    market: "hippies"
-    equipment: "aws"
+    location: "IO"
+    market: "americans"
+    equipment: "gke"
 ---
 kind: ClusterSelector
 apiVersion: configmanagement.gke.io/v1
