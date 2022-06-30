@@ -5,7 +5,7 @@
 kind: Cluster
 apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
-  name: chaos-azure-us-central  # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
+  name: chaos-azure-uscentral  # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
   labels:
     location-name: "location-3"  # Should be unique in this situation (could be location number), used in selector
     canary: "50"
