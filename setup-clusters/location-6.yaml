@@ -1,0 +1,23 @@
+###
+###  This is an example of a working setup for multi-repo with proper comments
+###
+
+kind: Cluster
+apiVersion: clusterregistry.k8s.io/v1alpha1
+metadata:
+  name: chaos-abm-onprem-2  # NOTE: MUST MATCH spec.clusterName field in ConfigSManagment
+  labels:
+    location-name: "location-6"  # Should be unique in this situation (could be location number), used in selector
+    canary: "50"
+    location: "HI"
+    market: "hipsters"
+    equipment: "on-prem"
+---
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: loc-6-sel
+spec:
+  selector:
+    matchLabels:
+      location-name: location-6 # label and value match Cluster label above
