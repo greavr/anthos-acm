@@ -1,0 +1,16 @@
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: loc-all
+spec:
+  selector:
+    matchExpressions:
+      - key: location-name
+        operator: In
+        values:
+        - location-6
+        - location-5
+        - location-4
+        - location-3
+        - location-2
+        - location-1 
