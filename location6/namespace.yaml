@@ -6,12 +6,3 @@ metadata:
     configmanagement.gke.io/cluster-selector: loc-6-sel
   labels:
     created-by: root-configuration
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: this-is-a-test
-  annotations:
-    configmanagement.gke.io/cluster-selector: loc-6-sel
-  labels:
-    created-by: root-configuration
